@@ -25,6 +25,7 @@ module.exports = {
   $onlyIf[$mentioned[1]!=;{author:HATA!:$authorAvatar}{description:Bir Kişi Etiketlemeniz Gerekiyor!}{color:RED}{delete:8s}]
   $onlyIf[$getUserVar[sgelistirici;$mentioned[1]]!=no;{author:HATA!:$authorAvatar}{description:Bu Kişide Zaten Sertifika Yok!}{color:RED}{delete:8s}]
   $endif
+$suppressErrors[Rol Verilemedi!]
   $onlyIf[$checkContains[$toLowercase[$message[1]];ver;al]!=false;{author:HATA!:$authorAvatar}{description:$username \`ver\` veya \`al\` Yazmanız Gerekiyor!}{color:RED}{delete:8s}]
   $onlyIf[$hasRole[$authorID;$getServerVar[byetkili]]!=false;{author:HATA!:$authorAvatar}{description:$username Bu Komutu Kullanabilmek İçin <@&$getServerVar[byetkili]>(\`$getServerVar[byetkili]\`) Rolüne Sahip Olman Gerekiyor!}{color:RED}{delete:8s}]
   $onlyIf[$getServerVar[botlist]!=kapalı;{author:HATA!:$authorAvatar}{description:BotList Sistemi Açık Değil! Açmak İçin \`\`\`js
