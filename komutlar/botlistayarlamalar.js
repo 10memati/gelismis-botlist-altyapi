@@ -73,7 +73,7 @@ $getServerVar[prefix]botekle <bot id> <bot prefix> <dbl Onay Durumu onaysız/ona
 $getServerVar[prefix]botekle $clientID $getServerVar[prefix] onaysız\`\`\`
 
 Çıkanın Botu Atılır!}{color:RANDOM}{thumbnail:$serverIcon}]
-  $setServerVar[bkanal;$mentionedRoles[1]]
+  $setServerVar[bkanal;$mentionedChannels[1]]
   $onlyIf[$getServerVar[bkanal]!=$mentionedRoles[1];{author:HATA!:$authorAvatar}{description:$username BotList Bot Ekleme Kanalı Zaten <#$mentionedChannels[1]>(\`$mentionedChannels[1]\`) Olarak Ayarlı!}{color:RED}{delete:8s}]
   $onlyIf[$mentionedChannels[1]!=;{author:HATA!:$authorAvatar}{description:$username Bir Kanal Etiketle!}{color:RED}{delete:8s}]
     $onlyIf[$getServerVar[botlist]!=kapalı;{author:HATA!:$authorAvatar}{description:BotList Sistemi Açık Değil! Açmak İçin \`\`\`js
@@ -83,7 +83,7 @@ $getServerVar[prefix]botekle $clientID $getServerVar[prefix] onaysız\`\`\`
   $description[
   $username BotList Bot Yetkili Log Kanalı <#$mentionedChannels[1]>(\`$mentionedChannels[1]\`) Olarak Ayarlandı.]
   $color[RANDOM]
-  $setServerVar[bytlog;$mentionedRoles[1]]
+  $setServerVar[bytlog;$mentionedChannels[1]]
   $onlyIf[$getServerVar[bytlog]!=$mentionedRoles[1];{author:HATA!:$authorAvatar}{description:$username BotList Bot Yetkili Log Kanalı Zaten <#$mentionedChannels[1]>(\`$mentionedChannels[1]\`) Olarak Ayarlı!}{color:RED}{delete:8s}]
   $onlyIf[$mentionedChannels[1]!=;{author:HATA!:$authorAvatar}{description:$username Bir Kanal Etiketle!}{color:RED}{delete:8s}]
   $onlyIf[$getServerVar[botlist]!=kapalı;{author:HATA!:$authorAvatar}{description:BotList Sistemi Açık Değil! Açmak İçin \`\`\`js
