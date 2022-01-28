@@ -6,7 +6,7 @@ app.get("/",(req,res) =>{
 const DBD = require("aoi.js");
 const bot = new DBD.Bot({
   token: process.env['token'],
-  prefix: "$getServerVar[prefix]",
+  prefix: ["$getServerVar[prefix]"],
  })
 bot.onMessage()
 bot.onJoined()
@@ -46,9 +46,8 @@ bot.variables({
   brol:"yok",
   bgelistirici:"yok",
   botu:"",
-  yasakl:"",
-  yasak:"no",
-  yasaksbp:""
+  sgelistirici:"no",
+  sbot:"no"
 })
 
 bot.leaveCommand({
@@ -113,7 +112,7 @@ $username Prefix \`$message\` Olarak Ayarlandı.
 ]
 $color[RANDOM]
 $setServerVar[prefix;$message]
-$onlyIf[$charCount[$message]>3;Prefix 3 Harften Fazla Olamaz!]
+$onlyIf[$message!=;Bir prefix Gir!]$onlyIf[$charCount[$message]<3;Prefix 3 Harften Fazla Olamaz!]
 $onlyPerms[admin;Yetkin Yok!]`
 })
 
@@ -133,6 +132,9 @@ __Moderasyon:__
 **$getServerVar[prefix]forceban**
 \`ID'si Girilen Kişiyi Sunucudan Yasaklar\`
 
+**$getServerVar[prefix]unban**
+\`ID'si Girilen Kişinin Yasaklanmasını Açar\`
+
 __BotList:__
 
 **$getServerVar[prefix]botlist**
@@ -140,9 +142,6 @@ __BotList:__
 
 **$getServerVar[prefix]botekle**
 \`Bot Ekleme Başvurusu Yapmaya Yarar\`
-
-**$getServerVar[prefix]botlist-yasaklı**
-\`Etiketlenen Kişiyi BotList'den Yasaklar/Yasağını Kaldırır\`
 
 **$getServerVar[prefix]sertifika**
 \`Etiketlenen Kullanıcıya Ve Botuna Sertifika Verir\`]
